@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<h1>Edit User</h1>
+
+<form method="post" action="/users/{{user.name}}">
+	<input type="hidden" name="_method" value="PUT">
+
+  <div class="form-group">
+    <label for="">Name</label>
+    <input type="text" name="name" class="form-control" id="" placeholder="Enter name" value="{{ user.name}}">
+  </div>
+
+  <div class="form-group">
+    <label for="">Email</label>
+    <input type="text" name="email" class="form-control" id="" placeholder="Enter email" value="{{ user.email}}">
+  </div>
+
+  <div class="form-group">
+    <label for="">Age</label>
+    <input type="text" name="age" class="form-control" id="" placeholder="Enter Age" value="{{ user.age}}">
+  </div>
+
+
+
+	<input type="submit" class="btn btn-primary" value="update">
+</form>
+
+{% endblock %}
